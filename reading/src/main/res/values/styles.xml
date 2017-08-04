@@ -1,0 +1,252 @@
+<resources xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!--MaterialDrawer-->
+    <style name="main_drawerTheme" parent="AppTheme">
+        <!-- ...and here we setting appcompat’s color theme attrs -->
+        <!-- MaterialDrawer specific values -->
+        <item name="material_drawer_background">@color/white</item>
+        <item name="material_drawer_primary_text">@color/black</item>
+        <item name="material_drawer_divider">@color/white</item>
+        <item name="material_drawer_selected_text">@color/black</item>
+
+    </style>
+
+    <!-- stateLayout -->
+    <style name="stfImage">
+        <item name="android:layout_width">@dimen/stfImageSize</item>
+        <item name="android:layout_height">@dimen/stfImageSize</item>
+        <item name="android:tint">#0096b4</item>
+    </style>
+
+    <style name="stfMessage">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/cyan_70</item>
+    </style>
+
+    <style name="stfButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:layout_marginTop">@dimen/app_margin_24</item>
+        <item name="android:paddingLeft">48dp</item>
+        <item name="android:paddingRight">48dp</item>
+        <item name="android:button">@null</item>
+        <item name="android:background">@drawable/btn_retry</item>
+        <item name="android:textColor">@color/brown</item>
+    </style>
+
+    <style name="stfContainer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginTop">120dp</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="stfProgress">
+        <item name="android:indeterminateDrawable">@drawable/progress_loading</item>
+        <item name="android:layout_width">@dimen/stfProgressSize</item>
+        <item name="android:layout_height">@dimen/stfProgressSize</item>
+        <item name="android:indeterminateDuration">1000</item>
+    </style>
+
+    <!--app-->
+    <style name="app.webView" parent="AppTheme">
+        <item name="android:windowIsTranslucent">false</item>
+    </style>
+    
+    <style name="app_line">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:background">@color/line_bg</item>
+    </style>
+
+    <style name="app_cardView">
+        <item name="android:clickable">true</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+        <item name="cardCornerRadius">@dimen/radius</item>
+        <item name="cardPreventCornerOverlap">false</item>
+        <item name="cardUseCompatPadding">false</item>
+        <item name="cardElevation">0dp</item>
+        <item name="cardBackgroundColor">@android:color/transparent</item>
+    </style>
+
+    <style name="app">
+        <item name="android:clickable">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="app.breakThrough_progress" parent="android:Widget.ProgressBar.Horizontal">
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/progress_breakthrough</item><!-- progress_horizontal -->
+        <item name="android:indeterminateDrawable">@android:drawable/progress_indeterminate_horizontal</item>
+    </style>
+
+    <!-- app_text -->
+    <style name="app.text"></style>
+    <style name="app.text.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="app.text.white.S">
+        <item name="android:textSize">@dimen/text_size_12</item>
+    </style>
+    <style name="app.text.white.M">
+        <item name="android:textSize">@dimen/text_size_13</item>
+    </style>
+    <style name="app.text.white.L">
+        <item name="android:textSize">@dimen/text_size_14</item>
+    </style>
+    <style name="app.text.white.XL">
+        <item name="android:textSize">@dimen/text_size_16</item>
+    </style>
+    <style name="app.text.white.XLL">
+        <item name="android:textSize">@dimen/text_size_18</item>
+    </style>
+    <style name="app.text.white.XLLL">
+        <item name="android:textSize">@dimen/text_size_24</item>
+    </style>
+    <style name="app.text.black">
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="app.text.black.S">
+        <item name="android:textSize">@dimen/text_size_12</item>
+    </style>
+    <style name="app.text.black.M">
+        <item name="android:textSize">@dimen/text_size_13</item>
+    </style>
+    <style name="app.text.black.L">
+        <item name="android:textSize">@dimen/text_size_14</item>
+    </style>
+    <style name="app.text.black.XL">
+        <item name="android:textSize">@dimen/text_size_16</item>
+    </style>
+    <style name="app.text.black.XLL">
+        <item name="android:textSize">@dimen/text_size_18</item>
+    </style>
+    <style name="app.text.black.XLLL">
+        <item name="android:textSize">@dimen/text_size_24</item>
+    </style>
+    <style name="app.text.gray">
+        <item name="android:textColor">@color/gray</item>
+    </style>
+    <style name="app.text.gray.S">
+        <item name="android:textSize">@dimen/text_size_12</item>
+    </style>
+    <style name="app.text.gray.M">
+        <item name="android:textSize">@dimen/text_size_13</item>
+    </style>
+    <style name="app.text.gray.L">
+        <item name="android:textSize">@dimen/text_size_14</item>
+    </style>
+    <style name="app.text.gray.XL">
+        <item name="android:textSize">@dimen/text_size_16</item>
+    </style>
+    <style name="app.text.gray.XLL">
+        <item name="android:textSize">@dimen/text_size_18</item>
+    </style>
+    <style name="app.text.gray.XLLL">
+        <item name="android:textSize">@dimen/text_size_24</item>
+    </style>
+
+    <!-- setting item -->
+    <style name="app.settingItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">46dp</item>
+    </style>
+
+    <style name="app.settingItem.layout">
+        <item name="android:layout_marginLeft">@dimen/app_margin_12</item>
+        <item name="android:layout_marginRight">@dimen/app_margin_12</item>
+        <item name="android:layout_marginTop">@dimen/app_margin_8</item>
+        <item name="android:background">@drawable/bg_white_5</item>
+    </style>
+
+    <style name="app.settingItem.headText">
+        <item name="android:textSize">@dimen/app_margin_16</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:paddingLeft">@dimen/app_margin_12</item>
+        <item name="android:gravity">left|center_vertical</item>
+    </style>
+
+    <style name="app.settingItem.iconText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginLeft">@dimen/app_margin_12</item>
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textColorHint">@color/gray_30</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:background">@null</item>
+        <item name="android:textCursorDrawable">@drawable/cursor</item>
+    </style>
+
+    <style name="app.settingItem.icon">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/app_margin_12</item>
+        <item name="android:enabled">false</item>
+    </style>
+
+    <style name="app.settingItem.subContent">
+        <item name="android:textSize">@dimen/text_size_13</item>
+        <item name="android:textColor">@color/gray_30</item>
+        <item name="android:gravity">right|center_vertical</item>
+        <item name="android:layout_marginRight">@dimen/app_margin_24</item>
+    </style>
+
+    <style name="app.settingItem.right">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">right|center_vertical</item>
+        <item name="android:layout_marginRight">@dimen/app_margin_12</item>
+        <item name="android:src">@mipmap/ic_arrow_right</item>
+    </style>
+
+    <style name="app.settingItem.checkbox" parent="Theme.AppCompat.Light">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="colorControlNormal">@color/gray_30</item>
+        <item name="colorControlActivated">#5ae34f</item>
+    </style>
+
+    <style name="CustomDialog" parent="android:style/Theme.Dialog">
+        <!--  <item name="android:windowFrame">@null</item> -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- <item name="android:backgroundDimEnabled">true</item>dim:模糊的 阴影效果 -->
+    </style>
+
+    <style name="custom_dialog2" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <!-- Dialog的windowFrame框为无 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否漂现在activity上 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 是否半透明 -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- 去除黑色边框的关键设置项 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 屏幕背景是否变暗 -->
+        <item name="android:backgroundDimAmount">0.3</item>
+    </style>
+
+</resources>

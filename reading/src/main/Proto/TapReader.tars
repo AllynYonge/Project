@@ -1,0 +1,612 @@
+//数据结构
+module DDB {
+
+	struct SecKeyPair {
+		0 require int resourceID; //资源ID
+		1 require string secKey; //加密密钥
+	};
+
+	struct Point {
+		0 require string x;
+		1 require string y;
+	};
+
+	struct Size {
+		0 require string width;
+		1 require string height;
+	};
+
+	struct Rect {
+		0 require Point origin;
+		1 require Size size;
+	};
+
+	//行
+	struct Line {
+		0 require string original; //原文
+		1 require string translation; //译文
+		2 require string encryptSoundURL; //语音地址
+		3 require Rect frame; //位置信息
+	};
+
+	//页
+	struct Page {
+		0 require int pageNumber; //页码信息
+		1 require string encryptImageURL; //书页整图地址
+		2 require vector<Line> lines; //一页中所有的内容信息
+	};
+
+	//页码信息
+	struct PageRange {
+		0 require int start; //开始页码
+		1 require int end; //结束页码
+	};
+
+	//单元信息
+	struct Unit {
+		0 require long unitID; //单元ID
+		1 require string title; //标题 eg: title
+ 		2 require string name; //单元名 eg: Unit1, PartA
+		3 require string coverURL; //封页
+		4 require int canRolePlay; //是否有角色扮演模块
+		5 require PageRange pageRange; //页码信息
+	};
+
+	//课程信息
+	struct Module {
+	  0 require long moduleID; //moduleId
+		1 require string title; //课程标题
+ 		2 require string name; //课程名 eg:Module 1
+		3 require vector<Unit> units; //单元信息
+		4 require PageRange pageRange;  //页码信息
+	};
+
+	//简要信息
+	struct BookBase {
+		0 require long bookID; //书藉ID
+		1 require string name; //书名 eg:三年级上册
+		2 require string coverURL; //封面地址
+        3 require string fullName; //完整书名：广东版小学英语三年级上册
+	};
+
+	//书，书由页组成，多页构成一个Unit, 多个Unit构成一个Module
+	struct Book {
+		0 require BookBase base; //基本信息
+		1 require vector<Module> modules; //课程列表
+    2 require PageRange pageRange; //整本书的页面
+		3 optional SecKeyPair secKeyPair; //加密密钥信息
+	};
+
+	//书的区域分类
+	struct BookVersion {
+		0 require string name; //版本名称
+		1 require vector<BookBase> books; //书藉列表
+	};
+
+	//购买状态
+	struct Purchase {
+		0 require int vip; //是否为会员
+		1 require string start; //有效期开始时间
+    2 require string end;//有效期结束时间
+    3 require string desc; //文字描述(您当前已经开通会员服务/当前已赠送您1个月会员)
+	};
+
+	struct User {
+		0 require long userId; //用户ID
+		1 require string nickname; //用户昵称
+		2 require string avatarURL; //用户头像
+		3 require string school; //学校名称
+		4 require string nameOfClass; //班级信息
+		5 optional Purchase purchase; //购买状态
+		6 optional long usingBook; //用户当前正在使用的书
+		7 optional string area; //地区信息
+	};
+
+	struct Word {
+		0 require string word; //单词
+		1 require string mean; //意思
+		2 require string encryptSoundURL; //发音
+	};
+
+	//台词
+	struct Dialogue {
+		0 require string talker; //讲话的人
+		1 require string content; //内容
+		2 require string encryptSoundURL; //语音地址
+	};
+
+	//剧本
+	struct PlayBook {
+		0 require string title; //标题
+		1 require string coverURL; //封面信息
+		2 require vector<string> roles; //角色列表
+		3 require vector<Dialogue> lines; //所有台词
+	};
+
+	//广告位
+	struct Banner {
+		0 require string coverURL; //广告封面
+		1 require string url; //广告地址
+	};
+
+	//扩展课
+	struct Course {
+		0 require long courseID; //扩展课Id
+		1 require string name; //课程名称
+		2 require string iconURL; //图标地址,对加密的资源名进行了标识
+		3 require string url; //课程地址
+	};
+
+	//问答
+	struct QA {
+		0 require string title; //标题
+		1 require string content; //内容
+	};
+
+	//商品
+	struct Product {
+		0 require int productID; //商品ID
+		1 require string name; //商品名称
+		2 require int price; //商品价格
+		3 require int type; //商品类型
+	};
+
+	//通知
+	struct Notification {
+               0 require int notificationId;
+	       1 require string title; //通知的标题
+	       2 require string content; //通知的内容
+	       3 require long createTime; //通知发生的时间
+               4 optional string jumpURL; //有些通知运动跳转详情
+	};
+
+	//活动
+	struct Activity {
+                0 require int activityId;
+		1 require string title; //活动标题
+                2 require string detail; //详情
+		3 require string coverURL; //活动封页
+		4 require long startTime; //活动开始时间
+		5 require long endTime; //活动结束时间
+                6 require string activityUrl;
+                7 require string activityDataUrl;
+                8 require string iconUrl;
+	};
+
+	struct MissionItem {
+		0 require string imageURL; //图片地址
+		1 require string encryptSoundURL; //音频地址
+		2 require string word;  //单词
+		
+	};
+
+	//小关卡
+	struct Mission {
+		0 require int missionID; //任务ID
+		1 require string title; //标题
+		2 require int otainedStar; //已经获得的星星
+		3 require int totalStar; //总星星
+		4 require vector<MissionItem> words; //单词列表
+          
+	};
+
+	//大关卡
+	struct Part {
+		0 require string title; //标题
+		1 require vector<Mission> missions; //任务
+	};
+
+	//跟读成绩
+	struct Score {
+		0 require int missionID; //任务ID
+		1 require int score;     //得分
+	};
+
+	struct Player {
+		0 require int rank; //用户ID
+		1 require string name; //玩家名
+		2 require int otainedStar; //获得的星星数
+		3 require int completedMission; //通关数
+	};
+
+	//跟读游戏
+	struct ReadAfterMe {
+		0 require vector<Part> parts; //一个跟读游戏由多个部分组成(对应的其实是一个单元)
+		1 require int completedMission; //已经完成的任务数
+		2 require int totalStar; //获得的总星星
+		3 require int todayStar; //今天获得的星星
+		4 require string appraise; //评价（比如：你的成绩打败了xxx的同学）
+	};
+
+
+  //推送信息
+  struct PushCount {
+    0 optional string pushKey; //推送Key, eg:notification ,activity
+    1 optional int type; //小红点的类型， 0:红点 1:数字
+    2 optional map<string, string> ext; //扩展字段， id = xx, 对应notification_id或者activity_id
+  };
+
+  //行政区
+  struct District {
+    0 require string name; //区名称
+    1 require int areaCode; //区域码
+  };
+
+  //市
+  struct City {
+    0 require string name; //城市名
+    1 require vector<District> districts; //包含的行政区
+    2 optional int areaCode; //区域码
+  };
+
+  //省
+  struct Province {
+    0 require string name; //省名称
+    1 require vector<City> cities; //包含的城市
+    2 optional int areaCode; //区域码
+  };
+
+	struct School {
+		0 require long schoolId;
+		1 require string name;
+	};
+
+  //分页信息
+  struct PageContext {
+    0 optional int context;
+  };
+
+	/**********************************************************************/
+
+	struct GetBooklistRequest {
+		0 optional string reserved; //无意义字段, 因为无属性的结构编译不过
+	};
+
+	//拉取书本信息
+	struct GetBooklistResponse {
+		0 require vector<BookVersion> areas; //区域分类
+	};
+
+	//登录
+	struct LoginRequest {
+		0 require string username; //用户名
+		1 require string password; //密码
+	};
+
+	struct LoginResponse {
+		0 require User userInfo; //用户信息
+		1 optional int isFirstLogin; //是否为第一次登录
+	};
+
+	//忘记密码
+	struct ResetPasswordRequest {
+		0 require string mobilePhone; //手机号
+		1 require string verifyCode; //验证码
+		2 require string password; //密码
+	};
+
+	struct ResetPasswordResponse {
+		0 optional string reserved; //无意义字段, 因为无属性的结构编译不过
+	};
+
+	//获取短信验证码
+	struct GetVerifyCodeRequest {
+		0 require string mobilePhone; //手机号
+	};
+
+	struct GetVerifyCodeResponse {
+		0 optional string reserved; //无意义字段, 因为无属性的结构编译不过
+	};
+
+  //修改密码
+  struct ChangePasswordRequest {
+    0 require string oldPassword; //原密码
+    1 require string newPassword; //新密码
+  };
+
+  struct ChangePasswordResponse {
+    0 optional string reserved; //无意义字段，因为无属性的结构编译不过
+  };
+
+	//注册用户
+	struct RegisterRequest {
+		0 require string mobilePhone; //电话号码
+		1 require string verifyCode; //短信验证码
+		2 require string password; //密码
+	};
+
+	struct RegisterResponse {
+		0 require User userInfo; //用户信息
+		1 optional int isFirstLogin; //是否为第一次登录
+	};
+
+	//更新用户资料
+	struct UpdateUserInfoRequest {
+		0 optional string name; //名字
+		1 optional string avatar; //头像
+		2 optional long schoolId; //学校id
+        3 optional int areaCode;//学校所在区域码
+	    4 optional string nameOfClass; //班级
+		5 optional long bookId; //修改用户使用的书
+	};
+
+	struct UpdateUserInfoResponse {
+		0 optional string reserved; //无意义字段, 因为无属性的结构编译不过
+	};
+
+    struct ProfileRequest {
+          0 require long userId;
+    };
+
+    struct ProfileResponse {
+          0 require User userInfo;
+    };
+
+	//获取书本信息
+	struct GetBookRequest {
+		0 require long bookID; //书藉ID
+	};
+
+	struct GetBookResponse {
+		0 require Book book; //书本信息
+	};
+
+	//获取Banner信息
+	struct GetBannersRequest {
+		0 optional int type;
+	};
+
+	struct GetBannersResponse {
+		0 require vector<Banner> banners; //广告列表
+	};
+          
+    //获取有单词听写的单元列表
+    struct GetWordsUnitListRequest{
+        0 require int resourceID; //书本的资源ID
+		1 require long bookID; //单元ID          
+    };
+    
+    struct GetWordsUnitListResponse{
+    	0 require vector<Unit> units;
+    };
+
+	//获取单词列表
+	struct GetUnitWordsRequest {
+    0 require int resourceID; //书本的资源ID
+		1 require long unitID; //单元ID
+	};
+
+	struct GetUnitWordsResponse {
+		0 require vector<Word> words; //单词列表
+	};
+
+	//获取角色扮演的剧本
+	struct GetPlayBookRequest {
+		0 require int resourceID; //资源ID
+		1 require long unitID; //单元ID
+	};
+
+	struct GetPlayBookResponse {
+		0 require vector<PlayBook> playBooks; //剧本
+	};
+
+	//拉取已获得成就
+	struct GetAchievementRequest {
+		0 optional string reserved; //无意义字段, 因为无属性的结构编译不过
+	};
+
+	struct GetAchievementResponse {
+		0 require int totalStar; //总星星
+	};
+
+	//获取书页信息
+	struct GetPageRequest {
+    0 require int resourceID; //资源ID
+		1 require PageRange pageRange; //要获取的书页
+	};
+
+	struct GetPageResponse {
+		0 require vector<Page> pages; //页
+	};
+
+	//获取扩展课信息
+	struct GetAfterSchoolCourseRequest {
+		0 optional string reserved; //无意义字段, 因为无属性的结构编译不过
+	};
+
+	struct GetAfterSchoolCourseResponse {
+		0 require vector<Course> courses; //课程列表
+	};
+
+	//修改扩展课信息
+	struct UpdateAfterSchoolCourseRequest {
+		0 require int type; //1表示添加，2表示删除
+		1 require long courseID;
+	};
+
+	struct UpdateAfterSchoolCourseResponse {
+		0 optional string reserved; //无意义字段, 因为无属性的结构编译不过
+	};
+
+	//获取全量的扩展课信息
+	struct GetAllAfterSchoolCourseRequest {
+		0 optional string reserved; //无意义字段, 因为无属性的结构编译不过
+	};
+
+	struct GetAllAfterSchoolCourseResponse {
+		0 require vector<Course> courses; //课程列表
+	};
+
+	//获取通知列表
+	struct GetNotificationsRequest {
+               0 optional PageContext pageContext;
+	};
+
+	struct GetNotificationsResponse {
+		0 require  vector<Notification> notifications; //通知列表
+                1 optional PageContext pageContext;
+	};
+
+	//设置某条通知为已读，并清除该通知的小红点
+	struct ReadNotificationRequest {
+               0 optional int notificationId;
+	};
+
+	struct ReadNotificationResponse {
+               0 optional string reserved;
+        };
+
+	//获取活动列表
+	struct GetActivitiesRequest {
+               0 optional PageContext pageContext;
+	};
+
+	struct GetActivitiesResponse {
+		0 require vector<Activity> activities; //活动列表信息
+                1 optional PageContext pageContext;
+	};
+
+	//获取商品信息
+	struct GetProductRequest {
+		0 optional string reserved; //无意义字段, 因为无属性的结构编译不过
+	};
+
+	struct GetProductResponse {
+		0 require vector<Product> products; //可购买商品列表
+	};
+
+        struct PlaceOrderRequest {
+               0 require int productId;
+               1 require int payType;  //1是微信，2是支付宝，3是苹果内购
+               2 optional string ext; //外带数据，由业务自己解析
+               3 optional string iapKey; //如果支付类型是3（苹果内购），则需要填此字段，后面验证苹果收据时需要通过这个字段来找到对应的订单
+        };
+
+        struct WXPayInfo {  //微信支付
+               0 require string appid;
+               1 require string partnerid;
+               2 require string prepayid;
+               3 require string wx_package;
+               4 require string noncestr;
+               5 require string timestamp;
+               6 require string sign;
+        };
+
+        struct AliPayInfo {  //支付宝支付
+               0 require string payInfo;
+        };
+
+        struct AppleIAPInfo {  //苹果内购
+               0 require string reserved;
+        };
+
+        struct PlaceOrderResponse {
+               0 require string orderId;
+               1 require int payType;
+               2 optional WXPayInfo wxPayInfo;
+               3 optional AliPayInfo aliPayInfo;
+               4 optional AppleIAPInfo appleIAPInfo;
+        };
+
+        struct AppleIAPVerifyRequest {
+               0 require string iapKey;
+               1 require string iapReceipt;
+        };
+
+        struct AppleIAPVerifyResponse {
+               0 require string validResponse;
+        };
+
+
+	//获取帮助与反馈
+	struct GetQARequest {
+		0 optional string reserved; //无意义字段, 因为无属性的结构编译不过
+	};
+
+	struct GetQAResponse {
+		0 require vector<QA> lines; //帮助内容
+	};
+
+	//提交反馈
+	struct SendFeedbackRequest {
+		0 require string content; //反馈信息
+	};
+
+	struct SendFeedbackResponse {
+		0 optional string reserved; //无意义字段, 因为无属性的结构编译不过
+	};
+
+	//获取跟读闯关信息
+	struct GetReadAfterMeInfoRequest {        
+		0 require long bookID; //跟读成绩是和书本相关的
+	};
+
+	struct GetReadAfterMeInfoResponse {
+		0 require ReadAfterMe readAfterMe; //跟读游戏信息
+        1 require SecKeyPair secKeyPair;
+	};
+
+	//获取星星排行榜列表
+	struct GetReadAfterMeGameBoardRequest {
+		0 optional string reserved; //无意义字段，因为无属性的结构编译不过
+	};
+
+	struct GetReadAfterMeGameBoardResponse {
+		0 require vector<Player> players; //星星排行榜玩家列表
+	};
+
+	//提交跟读闯关成绩
+	struct PostReadAfterMeScoreRequest {
+		0 require long bookID; //书本ID
+		1 require Score result; //闯关成绩
+	};
+
+	struct PostReadAfterMeScoreResponse {
+		0 optional string reserved; //无意义字段，因为无属性的结构编译不过
+	};
+
+	//获取加密密钥信息, 每次打开软件都会调用该接口获取密钥
+	struct GetSecKeyRequest {
+		0 require int resourceID; //资源ID
+	};
+
+	struct GetSecKeyResponse {
+		0 require SecKeyPair pair; //密钥信息，该信息禁止保存到持久化存储中，紧限内存中使用
+	};
+
+  //获取省市编码
+  struct GetAreaCodeRequest {
+    0 optional string reserved; //无意义字段，因为无属性的结构编译不过
+  };
+
+  struct GetAreaCodeResponse {
+    0 require vector<Province> provinces; //地区信息
+  };
+
+	//获取学校列表
+	struct GetSchoolsRequest {
+		0 require int areaCode;
+	};
+
+	struct GetSchoolsResponse {
+		0 require vector<School> schools;
+	};
+
+  //获取通知信息
+  struct GetPushCountRequest {
+    0 optional string reserved; //无意义这段
+  };
+
+  struct GetPushCountResponse {
+   1 optional vector<PushCount> counts; //通知信息
+  };
+
+  //清除小红点
+  struct CleanPushCountRequest {
+   0 optional string pushKey;  //为空表示清除所有，否则清除指定的pushKey
+  };
+
+  struct CleanPushCountResponse {
+   0 optional string reserved;
+  };
+};

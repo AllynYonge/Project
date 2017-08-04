@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@mipmap/bg_reading_detail_menu"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <android.support.design.widget.CheckableImageButton
+            android:id="@+id/image_reading_repeat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:background="@null"
+            android:src="@drawable/ic_reading_repeat"
+            app:layout_constraintBottom_toTopOf="@+id/tv_reading_repeat"
+            app:layout_constraintHorizontal_bias="0.454"
+            app:layout_constraintLeft_toLeftOf="@+id/tv_reading_repeat"
+            app:layout_constraintRight_toRightOf="@+id/tv_reading_repeat"/>
+
+        <TextView
+            android:id="@+id/tv_reading_repeat"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginStart="60dp"
+            android:text="复读"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <android.support.design.widget.CheckableImageButton
+            android:id="@+id/image_listen_playAndStop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@null"
+            android:src="@drawable/ic_listen_toggle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintLeft_toLeftOf="@+id/imageView"
+            app:layout_constraintRight_toRightOf="@+id/imageView"/>
+
+        <android.support.design.widget.CheckableImageButton
+            android:id="@+id/image_reading_translate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:background="@null"
+            android:src="@drawable/ic_reading_translate"
+            app:layout_constraintBottom_toTopOf="@+id/tv_reading_translate"
+            app:layout_constraintLeft_toLeftOf="@+id/tv_reading_translate"
+            app:layout_constraintRight_toRightOf="@+id/tv_reading_translate"/>
+
+        <TextView
+            android:id="@+id/tv_reading_translate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginRight="60dp"
+            android:text="翻译"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        app:layout_heightPercent="87%h"
+        android:layout_height="0dp"
+        app:layout_marginLeftPercent="2%w"
+        app:layout_marginRightPercent="2%w"
+        android:background="@drawable/bg_white_5"
+        android:orientation="vertical">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+
+            android:background="@color/colorPrimaryLight"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_reading_detail_top"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:background="@drawable/bg_red_5"
+                android:gravity="center"
+                android:text="请点击选择开始句子"
+                android:textColor="@color/white"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+        <com.king.reading.widget.ReadingViewPager
+            android:id="@+id/pager_reading_detail_gallery"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"/>
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+
+</com.zhy.android.percent.support.PercentFrameLayout>

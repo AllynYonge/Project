@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/image_rolePlay_expression"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_roleplay_a"/>
+
+        <ImageView
+            android:id="@+id/image_rolePlay_score_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/tv_roleplay_a"
+            android:layout_marginTop="@dimen/app_margin_12"/>
+
+        <com.king.reading.widget.SimpleRatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/app_margin_16"
+            app:srb_maxStarSize="25dp"
+            app:srb_drawBorderEnabled="true"
+            app:srb_starBorderWidth="7"
+            app:srb_starCornerRadius="5"
+            app:srb_borderColor="@color/ratingBar"
+            app:srb_fillColor="@color/ratingBar_light"
+            app:srb_isIndicator="true"
+            app:srb_numberOfStars="5"
+            app:srb_starsSeparation="10dp"
+            app:srb_rating="4"
+            app:srb_starBackgroundColor="@color/ratingBar"/>
+
+        <TextView
+            android:id="@+id/tv_role_continue"
+            style="@style/app.text.white.XL"
+            android:background="@drawable/btn_yellow"
+            android:textColor="@color/brown"
+            android:text="继续扮演"
+            android:layout_marginTop="40dp"/>
+    </LinearLayout>
+</RelativeLayout>

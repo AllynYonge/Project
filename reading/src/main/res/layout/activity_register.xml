@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <LinearLayout style="@style/app.settingItem.layout">
+
+        <TextView
+            style="@style/app.settingItem.icon"
+            android:id="@+id/tv_register_phone_icon"
+            android:background="@drawable/ic_phone"/>
+
+        <EditText
+            android:id="@+id/edit_register_phone"
+            style="@style/app.settingItem.iconText"
+            android:inputType="number"
+            android:maxLength="11"
+            android:hint="手机号"/>
+    </LinearLayout>
+
+    <LinearLayout style="@style/app.settingItem.layout">
+
+        <TextView
+            style="@style/app.settingItem.icon"
+            android:id="@+id/tv_register_verity_icon"
+            android:background="@drawable/ic_phone"/>
+
+        <EditText
+            android:id="@+id/edit_register_verityCode"
+            style="@style/app.settingItem.iconText"
+            android:hint="短信验证码"
+            android:inputType="number"
+            android:maxLength="6"/>
+
+        <View
+            style="@style/app_line"
+            android:layout_width="1px"
+            android:layout_height="36dp"
+            android:layout_marginRight="@dimen/app_margin_12"/>
+
+        <TextView
+            android:id="@+id/tv_register_getCode"
+            style="@style/app.settingItem.right"
+            android:layout_height="match_parent"
+            android:text="立即获取"
+            android:textColor="@color/cyan"/>
+    </LinearLayout>
+
+    <LinearLayout style="@style/app.settingItem.layout">
+
+        <TextView
+            style="@style/app.settingItem.icon"
+            android:id="@+id/tv_register_pwd_icon"
+            android:background="@drawable/ic_pwd"/>
+
+        <EditText
+            android:id="@+id/edit_register_pwd"
+            style="@style/app.settingItem.iconText"
+            android:inputType="textVisiblePassword"
+            android:maxLength="20"
+            android:hint="设置6-8位数字、字母新密码"/>
+
+        <LinearLayout
+            android:id="@+id/ll_register_see"
+            style="@style/app.settingItem.right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/app_margin_12"
+            android:layout_marginRight="0dp">
+            <android.support.v7.widget.AppCompatCheckBox
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:id="@+id/chk_register_see"
+                android:button="@drawable/ic_seepwd"
+                android:checked="true"
+                android:clickable="false"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_register"
+        style="@style/app.settingItem.layout"
+        android:background="@drawable/btn_login"
+        android:enabled="false"
+        android:text="确认"
+        android:textColor="@color/btn_login_text"
+        android:textSize="@dimen/text_size_16"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/app_margin_24">
+        <android.support.v7.widget.AppCompatCheckBox
+            android:id="@+id/chk_register_selected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:checked="true"
+            android:button="@drawable/ic_chk_listen"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="我已阅读并接受声明内容"
+            android:layout_marginLeft="4dp"/>
+        <TextView
+            android:id="@+id/tv_register_agreement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="《使用协议》"
+            android:textColor="@color/yellow"/>
+    </LinearLayout>
+</LinearLayout>

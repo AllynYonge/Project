@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="@dimen/app_default_border"
+              android:layout_marginRight="@dimen/app_default_border"
+              android:padding="@dimen/app_default_border"
+              android:background="@drawable/bg_white_5"
+              android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/ll_help_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_help_question"
+            style="@style/app.text.black.XL"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical"
+            android:layout_weight="1"
+            android:gravity="left"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:src="@mipmap/ic_arrow_right"/>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/frame_help_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp">
+
+        <TextView
+            android:id="@+id/tv_help_answer"
+            style="@style/app.text.gray.L"
+            android:layout_width="wrap_content"
+            android:gravity="left"
+            android:textColor="@color/gray_40"
+            android:lineSpacingExtra="8dp"/>
+    </FrameLayout>
+</LinearLayout>

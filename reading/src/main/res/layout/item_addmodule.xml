@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              style="@style/app.settingItem.layout">
+
+    <TextView style="@style/app.settingItem.headText"
+              android:id="@+id/tv_addmodule_name"
+        android:text="洋葱数学"/>
+
+    <TextView style="@style/app.settingItem.right"
+              android:id="@+id/tv_addmodule_add"
+        android:text="已添加"
+        android:textColor="@color/cyan"/>
+</FrameLayout>

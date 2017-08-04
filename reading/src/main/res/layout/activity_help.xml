@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <TextView
+        style="@style/app.text.white.L"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/app_default_border"
+        android:drawableLeft="@mipmap/ic_read_block"
+        android:drawablePadding="@dimen/app_margin_8"
+        android:text="常见问题"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/app_margin_12"
+        android:layout_weight="1">
+
+        <include layout="@layout/layout_recycler"/>
+    </FrameLayout>
+
+    <TextView
+        style="@style/app.settingItem.layout"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="27dp"
+        android:background="@drawable/btn_login"
+        android:text="下一步"
+        android:textColor="@color/btn_login_text"
+        android:textSize="@dimen/text_size_16"/>
+</LinearLayout>

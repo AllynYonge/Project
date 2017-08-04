@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:paddingLeft="@dimen/app_default_border"
+              android:paddingRight="@dimen/app_default_border">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_white_5"
+        android:padding="@dimen/app_margin_16">
+
+        <TextView
+            android:id="@+id/tv_profile_avatar"
+            style="@style/app.text.gray.XL"
+            android:layout_centerVertical="true"
+            android:text="头像"/>
+
+        <com.king.reading.widget.drawer.view.BezelImageView
+            android:id="@+id/image_profile_avatar"
+            android:layout_width="@dimen/material_drawer_account_header_selected"
+            android:layout_height="@dimen/material_drawer_account_header_selected"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/app_margin_16"
+            android:layout_toLeftOf="@+id/image_right_arrow"
+            android:src="@mipmap/ic_avatar_big"/>
+
+        <ImageView
+            android:id="@+id/image_right_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/ic_arrow_right"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/app_margin_8"
+        android:background="@drawable/bg_white_5"
+        android:padding="@dimen/app_margin_16">
+
+        <TextView
+            style="@style/app.text.gray.XL"
+            android:layout_centerVertical="true"
+            android:text="姓名"/>
+
+        <TextView
+            android:id="@+id/tv_profile_name"
+            style="@style/app.text.black.XL"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="杨虎"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/app_margin_8"
+        android:background="@drawable/bg_white_5"
+        android:padding="@dimen/app_margin_16">
+
+        <TextView
+            style="@style/app.text.gray.XL"
+            android:layout_centerVertical="true"
+            android:text="学校"/>
+
+        <TextView
+            android:id="@+id/tv_profile_schoolName"
+            style="@style/app.text.black.XL"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="深圳方直小学"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/app_margin_8">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bg_white_5"
+            android:paddingBottom="@dimen/app_margin_16"
+            android:paddingTop="@dimen/app_margin_16">
+
+            <TextView
+                android:id="@+id/tv_profile_group"
+                style="@style/app.text.black.XL"
+                android:layout_centerInParent="true"
+                android:text="三年级"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/app_margin_8"
+                android:src="@mipmap/ic_arrow_down_gray"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/app_margin_8"
+            android:layout_weight="2"
+            android:background="@drawable/bg_white_5"
+            android:paddingBottom="@dimen/app_margin_16"
+            android:paddingTop="@dimen/app_margin_16">
+
+            <TextView
+                android:id="@+id/tv_profile_class"
+                style="@style/app.text.black.XL"
+                android:layout_centerInParent="true"
+                android:text="2班"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/app_margin_8"
+                android:src="@mipmap/ic_arrow_down_gray"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

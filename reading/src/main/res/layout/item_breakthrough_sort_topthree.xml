@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/ll_breakthrough_sort_item"
+              android:layout_width="match_parent"
+              android:layout_height="50dp"
+              android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/image_breakthrough_sort_top"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:scaleType="center"
+        android:src="@mipmap/ic_ranking_one"/>
+
+    <TextView
+        android:id="@+id/tv_breakthrough_sort_name"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="李彦希"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_16"/>
+
+    <TextView
+        android:id="@+id/tv_breakthrough_sort_star"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="256"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_16"/>
+
+    <TextView
+        android:id="@+id/tv_breakthrough_sort_num"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="23"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_16"/>
+</LinearLayout>

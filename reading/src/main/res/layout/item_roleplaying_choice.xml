@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                                    android:orientation="vertical"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/bg_shadow_blue_5"
+                                    app:cardCornerRadius="@dimen/radius">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/image_rolePlay_unitDetail_intro"
+            android:layout_width="match_parent"
+            android:layout_height="81dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/placeholder_unit"/>
+
+        <TextView
+            android:id="@+id/tv_rolePlay_unitDetail_title"
+            android:gravity="center"
+            android:textSize="@dimen/text_size_16"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"/>
+    </LinearLayout>
+</android.support.v7.widget.CardView>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center" >
+
+<!--         android:background="#dfe2e6" -->
+    <com.zhy.android.percent.support.PercentLinearLayout
+        android:background="@drawable/bg_white_5"
+        app:layout_widthPercent="80%w"
+        app:layout_heightPercent="80%w"
+        android:orientation="vertical" >
+
+        <com.zhy.android.percent.support.PercentRelativeLayout
+            android:layout_width="match_parent"
+            app:layout_heightPercent="15%h">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_centerVertical="true"
+                app:layout_textSizePercent="5%w"
+                android:text="分享"
+                android:textColor="#000000" />
+        </com.zhy.android.percent.support.PercentRelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#d7dade" /> 
+
+        <GridView
+            app:layout_marginTopPercent="5%w"
+            android:layout_gravity="center"
+            android:id="@+id/share_gridView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:horizontalSpacing="10dp"
+            android:numColumns="3"
+            app:layout_marginBottomPercent="5%w"
+            android:verticalSpacing="10dp" >
+        </GridView>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#d7dade" /> 
+
+        <RelativeLayout
+            android:id="@+id/share_cancel"
+            android:layout_width="match_parent"
+            app:layout_heightPercent="17%h">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                app:layout_paddingPercent="1%w"
+                android:text="取消"
+                android:textColor="#000000"
+                app:layout_textSizePercent="10%w"/>
+        </RelativeLayout> 
+    </com.zhy.android.percent.support.PercentLinearLayout>
+
+</com.zhy.android.percent.support.PercentRelativeLayout>

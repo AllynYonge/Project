@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:gravity="center_horizontal"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_customer_wxCompanyNum"
+        style="@style/app.settingItem.layout"
+        android:layout_marginTop="100dp">
+
+        <TextView
+            style="@style/app.settingItem.icon"
+            android:background="@mipmap/ic_wx"/>
+
+        <TextView
+            style="@style/app.settingItem.iconText"
+            android:clickable="false"
+            android:text="微信公众号：Kingsunsoft_DDB"/>
+
+        <ImageView style="@style/app.settingItem.right"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_customer_wxPersonNum"
+        style="@style/app.settingItem.layout">
+
+        <TextView
+            style="@style/app.settingItem.icon"
+            android:background="@mipmap/ic_wx"/>
+
+        <TextView
+            style="@style/app.settingItem.iconText"
+            android:clickable="false"
+            android:text="微信个人号：jtyddb"/>
+
+        <ImageView style="@style/app.settingItem.right"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_customer_qqNum"
+        style="@style/app.settingItem.layout">
+
+        <TextView
+            style="@style/app.settingItem.icon"
+            android:background="@mipmap/ic_qq"/>
+
+        <TextView
+            style="@style/app.settingItem.iconText"
+            android:clickable="false"
+            android:layout_marginLeft="@dimen/app_margin_16"
+            android:text="官方QQ群：604074830"/>
+
+        <ImageView style="@style/app.settingItem.right"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_customer_phoneNum"
+        style="@style/app.settingItem.layout"
+        android:clickable="true">
+
+        <TextView
+            style="@style/app.settingItem.icon"
+            android:background="@mipmap/ic_call"/>
+
+        <TextView
+            style="@style/app.settingItem.iconText"
+            android:layout_marginLeft="@dimen/app_margin_16"
+            android:clickable="false"
+            android:text="客服热线：400-111-8180转3"/>
+
+        <ImageView style="@style/app.settingItem.right"/>
+    </LinearLayout>
+</LinearLayout>

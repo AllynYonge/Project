@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:id="@+id/ll_base_content"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/colorPrimary"
+              android:fitsSystemWindows="true"
+              android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:contentInsetStart="0dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbar_ic_size">
+
+            <TextView
+                android:id="@+id/tv_toolbar_title"
+                style="@style/app.text.white.XLL"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_height="0dp"
+                android:layout_width="wrap_content"/>
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tab_toolbar_multiTab"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tabGravity="center"
+                app:tabIndicatorColor="@color/white"
+                app:tabSelectedTextColor="@color/white"
+                app:tabTextAppearance="@style/app.text.white.XLL"/>
+
+            <ImageView
+                android:id="@+id/image_toolbar_left"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:paddingLeft="@dimen/app_default_border"
+                android:paddingRight="@dimen/app_default_border"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_toolbar_right"
+                style="@style/app.text.white.XL"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginRight="@dimen/app_default_border"
+                android:layout_height="0dp"
+                android:layout_width="wrap_content"/>
+
+            <ImageView
+                android:id="@+id/image_toolbar_right"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginRight="@dimen/app_default_border"
+                android:visibility="gone"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+            <ImageView
+                android:id="@+id/image_toolbar_assist_right"
+                android:layout_width="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_height="0dp"
+                android:layout_marginRight="@dimen/app_default_border"
+                app:layout_constraintRight_toLeftOf="@+id/image_toolbar_right"
+                app:layout_goneMarginRight="0dp"
+                android:layout_marginEnd="@dimen/app_default_border"
+                android:layout_marginLeft="8dp"
+                />
+
+        </android.support.constraint.ConstraintLayout>
+
+
+    </android.support.v7.widget.Toolbar>
+
+    <com.king.reading.widget.statelayout.StatefulLayout
+        android:id="@+id/stateLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:stfAnimationEnabled="true"
+        app:stfInAnimation="@android:anim/fade_in"
+        app:stfOutAnimation="@android:anim/fade_out">
+        <LinearLayout
+            android:id="@+id/ll_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"></LinearLayout>
+    </com.king.reading.widget.statelayout.StatefulLayout>
+
+</LinearLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="43dp"
+              android:gravity="center_vertical"
+              android:orientation="horizontal"
+              android:paddingLeft="25dp"
+              android:paddingRight="25dp">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_read_block"/>
+
+    <TextView
+        android:id="@+id/tv_reading_detail_menu_module"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Module1"
+        android:textSize="@dimen/text_size_18"
+        android:textStyle="bold"
+        android:textColor="@color/reading_detail_outline_unit_text"
+        android:layout_marginLeft="@dimen/dp_10"/>
+</LinearLayout>

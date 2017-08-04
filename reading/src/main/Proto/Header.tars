@@ -1,0 +1,63 @@
+module Mod
+{
+	enum Platform
+	{
+		UNKNOW,
+		Ios,
+		Android,
+		PC,
+		H5,
+		TV,
+		IosPad,
+		AndroidPad,
+	};
+
+	struct Device
+	{
+       1 optional string sdkName; //android 系统版本名，eg：4.4.1
+	   2 optional int sdkVersion; //android 系统版本号，整形 eg17
+	   3 optional string brand;   //手机品牌，eg：三星（SAMSUNG）
+	   4 optional string model;   //手机型号，eg：S4, iPhone,3,1, iPhone,3,2
+	   5 optional string versionName;  //客户端版本名，eg：2.x.x,<YXY>_[1-9]_[0-9]_[0-9]
+	   6 optional int versionCode;     //客户端versionCode, versionName->int
+	   7 optional int buildNum;        //build号						xxxx
+	   8 optional string channel;      //渠道
+	};
+
+	struct Result 
+	{
+		1 require int retCode;
+		2 require string  msg;
+	};
+
+	//头信息
+	struct Header
+	{
+		1 require int requestId;        //请求id，客户端启动自增，用于校验请求包与回包匹配，避免串包
+		2 require string requestName;   //请求名
+		3 require Device device;        //手机基本信息
+		4 optional long svrTimestamp;     //回包下发服务器端时间戳，校验本地时差
+		5 optional string token;		      //token
+		6 optional string refreshToken;  //换票标识
+		7 optional string account;	 		  //login用户账号名
+		8 optional long userId;           //用户id
+		9 require string appId;         //app id用于区分是什么app
+		10 require Platform platform;        //平台
+		11 optional map<string, string>	ext; // 额外信息
+	};
+
+	//底层的Request
+	struct Request
+	{
+		1 require Header header;     //请求包头
+		2 optional vector<byte> body;       //请求体，二进制串
+	};
+
+	//底层的Response
+	struct Response
+	{
+		1 optional Header header;     //回包包头
+		2 optional vector<byte> body;       //回包，二进制串
+		3 optional Result result;
+	};
+};

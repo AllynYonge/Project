@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                                    style="@style/app_cardView"
+                                    app:cardBackgroundColor="@android:color/transparent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="vertical"
+        android:padding="@dimen/app_margin_12">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/constraint_textbook_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_textbook_name"
+                style="@style/app.text.white.XL"
+                android:layout_marginLeft="@dimen/app_margin_16"
+                android:clickable="false"
+                android:text="Using my senses"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tv_textbook_pageNumber"
+                style="@style/app.text.white.S"
+                android:layout_marginRight="@dimen/app_margin_8"
+                android:clickable="false"
+                android:text="P1-11"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tv_textbook_name"
+                app:layout_constraintRight_toLeftOf="@+id/image_textbook_arrow"/>
+
+            <ImageView
+                android:id="@+id/image_textbook_arrow"
+                android:layout_width="@dimen/dp_10"
+                android:layout_height="@dimen/dp_10"
+                android:layout_marginRight="@dimen/app_margin_8"
+                android:clickable="false"
+                android:src="@drawable/ic_arrow_down"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_textbook_pageNumber"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+        </android.support.constraint.ConstraintLayout>
+
+        <View
+            android:id="@+id/recycler_expand_placeholder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/app_margin_12">
+
+        </View>
+    </LinearLayout>
+
+
+</android.support.v7.widget.CardView>

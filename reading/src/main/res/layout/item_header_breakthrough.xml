@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent"
+                                             android:orientation="vertical"
+                                             android:paddingLeft="@dimen/app_default_border"
+                                             android:paddingRight="@dimen/app_default_border">
+    <TextView
+        style="@style/app.text.white.M"
+        android:id="@+id/tv_breakthrough_intro"
+        android:background="@mipmap/ic_breakthrough_intro"
+        android:text="每天连续跟读超过5分钟即可获得1颗星星哦"
+        app:layout_constraintRight_toLeftOf="@+id/imageView3"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraint_breakthrough_header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@drawable/bg_shadow_white_5"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_breakthrough_intro">
+
+        <LinearLayout
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="33dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <TextView
+                style="@style/app.text.gray.S"
+                android:text="累计获得星星"/>
+
+            <TextView
+                style="@style/app.text.gray.XLLL"
+                android:id="@+id/tv_breakthrough_header_totalStar"
+                android:text="23"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="48dp"
+            android:layout_marginTop="33dp"
+            android:background="#ddf4f9"
+            app:layout_constraintLeft_toRightOf="@+id/textView4"
+            app:layout_constraintRight_toLeftOf="@+id/textView2"/>
+
+        <LinearLayout
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="33dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/textView2">
+
+            <TextView
+                style="@style/app.text.gray.S"
+                android:text="已经通关"/>
+
+            <TextView
+                style="@style/app.text.gray.XLLL"
+                android:id="@+id/tv_breakthrough_header_completedMission"
+                android:text="257"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="48dp"
+            android:layout_marginTop="33dp"
+            android:background="#ddf4f9"
+            app:layout_constraintLeft_toRightOf="@+id/textView2"
+            app:layout_constraintRight_toLeftOf="@+id/textView3"/>
+
+        <LinearLayout
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="33dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toRightOf="@+id/textView2"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <TextView
+                style="@style/app.text.gray.S"
+                android:id="@+id/tv_breakthrough_header_todayStar"
+                android:text="今日获得星星"/>
+
+            <TextView
+                style="@style/app.text.gray.XLLL"
+                android:text="+18"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_breakthrough_header_appraise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="你的成绩打败了92%的同学"
+            android:textColor="#00A973"
+            android:drawableRight="@mipmap/ic_arrow_right_green"
+            android:drawablePadding="6dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@mipmap/ic_breakthrough_chicken"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/imageView3"/>
+
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/ll_breakthrough_sort_item"
+              android:layout_width="match_parent"
+              android:layout_height="50dp"
+              android:orientation="horizontal"
+    android:background="@color/cyan_80">
+
+    <TextView
+        android:id="@+id/tv_breakthrough_sort_ranking"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="1023"
+        android:textColor="@color/yellow"
+        android:textSize="@dimen/text_size_16"/>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        <ImageView
+            android:id="@+id/image_breakthrough_sort_mine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_avatar"
+            android:layout_centerInParent="true"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="-5dp"
+            android:src="@mipmap/ic_ranking_mine"
+            android:layout_alignBottom="@+id/image_breakthrough_sort_mine"
+            android:layout_alignRight="@+id/image_breakthrough_sort_mine"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_breakthrough_sort_star"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="256"
+        android:textColor="@color/yellow"
+        android:textSize="@dimen/text_size_16"/>
+
+    <TextView
+        android:id="@+id/tv_breakthrough_sort_num"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="23"
+        android:textColor="@color/yellow"
+        android:textSize="@dimen/text_size_16"/>
+</LinearLayout>

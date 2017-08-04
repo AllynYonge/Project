@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_timer_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+        android:text="2s"
+        android:textColor="@color/white"
+        android:textSize="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/progress_wheel"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_ready_word_tips"
+        style="@style/app.text.white.XL"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
+        android:text="请做好书写准备之后开始单词听写"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progress_wheel"/>
+
+    <com.king.reading.widget.DonutProgress
+        android:id="@+id/progress_wheel"
+        android:layout_width="112dp"
+        android:layout_height="112dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="4dp"
+        app:donut_finished_color="#33000000"
+        app:donut_finished_stroke_width="2dp"
+        app:donut_max="100"
+        app:donut_progress="100"
+        app:donut_show_text="false"
+        app:donut_unfinished_color="@android:color/transparent"
+        app:donut_unfinished_stroke_width="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_listen_word_play_stop"
+        app:layout_constraintLeft_toLeftOf="@+id/iv_listen_word_play_stop"
+        app:layout_constraintRight_toRightOf="@+id/iv_listen_word_play_stop"
+        app:layout_constraintTop_toTopOf="@+id/iv_listen_word_play_stop"/>
+
+
+    <ImageView
+        android:id="@+id/iv_listen_word_play_stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@mipmap/ic_listen_play"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginLeft="@dimen/app_default_border"
+        android:layout_marginRight="@dimen/app_default_border"
+        android:background="@drawable/bg_darkcyan_5"
+        android:gravity="center_vertical"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/app_margin_16"
+            android:src="@mipmap/ic_playing_1"/>
+
+        <TextView
+            android:id="@+id/tv_listen_word_tips"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/app_margin_16"
+            android:gravity="center_vertical"
+            android:text="正在播放第1个单词，共10个单词"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_listen_word_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/view">
+
+        <ImageView
+            android:id="@+id/iv_listen_word_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_listen_sequens"/>
+
+        <TextView
+            android:id="@+id/tv_listen_word_order"
+            style="@style/app.text.white.L"
+            android:layout_marginLeft="@dimen/app_margin_8"
+            android:text="顺序听写"/>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="1dp"
+        android:layout_height="25dp"
+        android:layout_marginBottom="24dp"
+        android:background="@color/cyan_60"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/ll_listen_word_speed_timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintLeft_toRightOf="@+id/view"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_listen_speed"/>
+
+        <TextView
+            android:id="@+id/tv_speed_time"
+            style="@style/app.text.white.L"
+            android:layout_marginLeft="@dimen/app_margin_8"
+            android:text="速度调节"/>
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

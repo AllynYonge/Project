@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <LinearLayout style="@style/app.settingItem.layout">
+
+        <TextView
+            style="@style/app.settingItem.icon"
+            android:id="@+id/tv_findPwd_phone_icon"
+            android:background="@drawable/ic_phone"/>
+
+        <EditText
+            android:id="@+id/edit_findPwd_phoneNumber"
+            style="@style/app.settingItem.iconText"
+            android:hint="手机号"
+            android:maxLength="11"
+            android:inputType="number"/>
+    </LinearLayout>
+
+    <LinearLayout style="@style/app.settingItem.layout">
+
+        <TextView
+            style="@style/app.settingItem.icon"
+            android:id="@+id/tv_findPwd_verify_icon"
+            android:background="@drawable/ic_validation"/>
+
+        <EditText
+            android:id="@+id/edit_findPwd_verifyCode"
+            style="@style/app.settingItem.iconText"
+            android:hint="短信验证码"
+            android:inputType="number"
+            android:maxLength="6"/>
+
+        <View
+            style="@style/app_line"
+            android:layout_width="1px"
+            android:layout_height="36dp"
+            android:layout_marginRight="@dimen/app_margin_12"/>
+
+        <TextView
+            android:id="@+id/tv_findPwd_getCode"
+            style="@style/app.settingItem.right"
+            android:layout_height="match_parent"
+            android:text="立即获取"
+            android:textColor="@color/cyan"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_findPwd_next"
+        style="@style/app.settingItem.layout"
+        android:background="@drawable/btn_login"
+        android:enabled="false"
+        android:text="下一步"
+        android:textColor="@color/btn_login_text"
+        android:textSize="@dimen/text_size_16"/>
+</LinearLayout>

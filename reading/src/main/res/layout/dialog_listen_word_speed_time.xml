@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <com.zhy.android.percent.support.PercentLinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_heightPercent="80%w"
+        app:layout_widthPercent="90%w"
+        android:background="@drawable/bg_white_5"
+        >
+
+        <TextView
+            android:id="@+id/tv_tip"
+            android:layout_width="match_parent"
+            android:text="播放语速"
+            app:layout_heightPercent="20%h"
+            android:layout_height="0dp"
+            android:gravity="center_vertical"
+            app:layout_marginLeftPercent="5%"
+            android:textColor="@color/text_title_black"
+            app:layout_textSizePercent="5%w"/>
+        <RadioGroup
+            android:id="@+id/tab_button_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_heightPercent="15%h"
+            app:layout_marginLeftPercent="5%"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_speed_slow"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="0.8X"
+                app:layout_textSizePercent="4%w"
+                android:button="@null"
+                android:drawableLeft="@drawable/ic_chk_listen"/>
+
+            <RadioButton
+                android:id="@+id/rb_speed_normal"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="1.0X"
+                android:checked="true"
+                app:layout_textSizePercent="4%w"
+                android:button="@null"
+                android:drawableLeft="@drawable/ic_chk_listen"/>
+
+            <RadioButton
+                android:id="@+id/rb_speed_fast"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="1.2X"
+                android:button="@null"
+                android:drawableLeft="@drawable/ic_chk_listen"/>
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:text="播放间隔"
+            app:layout_heightPercent="20%h"
+            android:layout_height="0dp"
+            android:gravity="center_vertical"
+            app:layout_marginLeftPercent="5%"
+            android:textColor="@color/text_title_black"
+            app:layout_textSizePercent="5%w"/>
+
+        <SeekBar
+            android:id="@+id/seekbar"
+            android:layout_width="match_parent"
+            app:layout_heightPercent="1%h"
+            android:layout_height="0dp"
+            android:max="11"
+            android:progress="1"
+            android:thumbOffset="0dip"
+            android:paddingLeft="-15dip"
+            android:paddingRight="-15dip"
+            android:layout_centerHorizontal="true"
+            android:progressDrawable="@drawable/po_seekbar"
+            android:thumb="@mipmap/icon_seekbar"
+            />
+
+        <TextView
+            android:id="@+id/tv_timer"
+            android:layout_width="match_parent"
+            android:text="5S"
+            app:layout_heightPercent="20%h"
+            android:layout_height="0dp"
+            app:layout_textSizePercent="7%w"
+            android:gravity="center"
+            app:layout_marginLeftPercent="5%"
+            android:textColor="@color/colorPrimary"
+            />
+        <Button
+            android:id="@+id/bt_ok"
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_gravity="center_horizontal"
+            android:text="确定"
+            android:background="@drawable/bg_yellow_5"
+            app:layout_textSizePercent="5%w"
+            app:layout_widthPercent="40%w"
+            app:layout_heightPercent="20%h"/>
+
+    </com.zhy.android.percent.support.PercentLinearLayout>
+</com.zhy.android.percent.support.PercentLinearLayout>
+

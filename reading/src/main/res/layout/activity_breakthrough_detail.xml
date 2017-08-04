@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView5"
+            style="@style/app.text.white.M"
+            android:layout_marginRight="8dp"
+            android:text="完成度"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/progressBar"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="@style/app.breakThrough_progress"
+            android:layout_width="190dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:max="100"
+            android:progress="40"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_progress"
+            style="@style/app.text.white.M"
+            android:layout_marginLeft="8dp"
+            android:text="0/10"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/progressBar"
+            app:layout_constraintTop_toTopOf="parent"/>
+    </android.support.constraint.ConstraintLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/app_margin_12"
+        android:layout_weight="1">
+
+
+        <com.king.reading.widget.BreakThroughViewPager
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <ImageView
+            android:id="@+id/imageView_forward"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical"
+            android:src="@mipmap/ic_breakthrough_before"
+            android:layout_marginLeft="@dimen/app_margin_12"/>
+
+        <ImageView
+            android:id="@+id/imageView_back"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:src="@mipmap/ic_breakthrough_after"
+            android:layout_marginRight="@dimen/app_margin_12"/>
+
+    </FrameLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/imageButton_try"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="7dp"
+            android:layout_marginTop="8dp"
+            android:background="@null"
+            android:src="@mipmap/ic_breakthrough_try"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/frameLayout"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.35000002"/>
+
+        <ImageButton
+            android:id="@+id/imageButton_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@null"
+            android:src="@mipmap/ic_breakthrough_play"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/frameLayout"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.35000002"/>
+
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@mipmap/ic_roleplay_follow_read_disable"/>
+
+            <com.king.reading.widget.DonutProgress
+                android:id="@+id/progress_wheel"
+                android:layout_width="88dp"
+                android:layout_height="88dp"
+                android:layout_gravity="center"
+                app:donut_show_text="false"
+                app:donut_finished_color="#009D99"
+                app:donut_finished_stroke_width="4dp"
+                app:donut_max="100"
+                app:donut_progress="100"
+                app:donut_unfinished_color="@color/cyan_80"
+                app:donut_unfinished_stroke_width="4dp"/>
+
+            <ImageView
+                android:id="@+id/image_roleplay_vioce"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="2dp"
+                android:src="@mipmap/ic_roleplay_follow_reading"/>
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tv_record_result"
+            android:visibility="invisible"
+            style="@style/app.text.white.M"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="13dp"
+            android:text="读的很棒哦"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout"/>
+
+        <com.king.reading.widget.SimpleRatingBar
+            android:id="@+id/simpleRatingBar_record_result"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_record_result"
+            app:srb_borderColor="@color/ratingBar"
+            app:srb_drawBorderEnabled="true"
+            app:srb_fillColor="@color/ratingBar_light"
+            app:srb_isIndicator="true"
+            app:srb_maxStarSize="22dp"
+            app:srb_numberOfStars="5"
+            app:srb_rating="4"
+            app:srb_starBackgroundColor="@color/ratingBar"
+            app:srb_starBorderWidth="7"
+            app:srb_starCornerRadius="5"
+            app:srb_starsSeparation="10dp"/>
+    </android.support.constraint.ConstraintLayout>
+</LinearLayout>

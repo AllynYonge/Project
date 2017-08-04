@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+          android:id="@+id/tv_openPayFeature"
+          style="@style/app.text.black.XL"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/app_margin_16"
+          android:background="@drawable/btn_yellow"
+          android:text="开通点读宝会员（12个月/108元）"
+          android:textColor="@color/brown"/>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/image_banner_bg"
+            android:layout_width="0dp"
+            android:layout_height="130dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/bg_breakthrough_result_top"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <ImageView
+            android:id="@+id/image_breakthrough_text_prompt"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="48dp"
+            android:layout_marginStart="48dp"
+            android:src="@mipmap/ic_roleplay_a"
+            app:layout_constraintBottom_toBottomOf="@+id/image_banner_bg"
+            app:layout_constraintLeft_toLeftOf="@+id/image_banner_bg"
+            app:layout_constraintTop_toTopOf="@+id/image_banner_bg"/>
+
+        <ImageView
+            android:id="@+id/imageView_tips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:src="@mipmap/tv_breakthrough_result_ok"
+            app:layout_constraintBottom_toTopOf="@+id/simpleRatingBar"
+            app:layout_constraintLeft_toRightOf="@+id/image_breakthrough_text_prompt"/>
+
+        <com.king.reading.widget.SimpleRatingBar
+            android:id="@+id/simpleRatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="33dp"
+            app:layout_constraintBottom_toBottomOf="@+id/image_breakthrough_text_prompt"
+            app:layout_constraintLeft_toRightOf="@+id/image_breakthrough_text_prompt"
+            app:srb_drawBorderEnabled="false"
+            app:srb_fillColor="@color/ratingBar_light"
+            app:srb_isIndicator="true"
+            app:srb_numberOfStars="5"
+            app:srb_rating="4"
+            app:srb_starBackgroundColor="@color/ratingBar"
+            app:srb_starCornerRadius="@integer/ratingBarRadius"
+            app:srb_starSize="25dp"
+            app:srb_stepSize="1"
+            android:layout_marginLeft="0dp"/>
+    </android.support.constraint.ConstraintLayout>
+
+    <TextView
+        style="@style/app.text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="24dp"
+        android:text="闯关中每个跟读平均分得分超过3颗星则闯关成功"
+        android:textColor="@color/cyan_90"
+        android:textSize="@dimen/text_size_13"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_white_180"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="本关获得星星"
+            android:textColor="@color/breakthrough_result_get_star_text"
+            android:textStyle="bold"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:src="@mipmap/ic_breakthrough_star"/>
+
+        <TextView
+            android:id="@+id/tv_breakthrough_totalScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:text="x36"
+            android:textColor="@color/breakthrough_result_get_star_text"
+            android:textSize="@dimen/text_size_14"
+            android:textStyle="bold"/>
+
+        <ProgressBar
+            android:id="@+id/progress_breakthrough_score"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_weight="1"
+            android:max="100"
+            android:progress="90"
+            android:progressDrawable="@drawable/bg_progressbar"/>
+    </LinearLayout>
+
+</LinearLayout>

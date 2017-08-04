@@ -1,0 +1,85 @@
+module Mod
+{
+	const int OK = 0;
+
+	//100000-200000 告警
+	//编解码错误
+	const int ERR_DECODE = 100000;
+	//参数错误
+	const int ERR_PARAM  = 100001;
+	//请求包不完整
+	const int ERR_PACKAGE = 100002;
+	//错误的命令
+	const int ERR_FUNCNAME = 100003;
+	//服务内部错误-redis错误
+	const int ERR_REDIS  = 100011;
+	//服务内部错误-异常错误
+	const int ERR_EXCEPTION  = 100010;
+
+	//登录相关
+	//帐号或者密码错误
+	const int ERR_ACCOUNT_PASSWD  = 100101;
+	//token 处理失败
+	const int ERR_ACCOUNT_TOKEN   = 100102;
+	//token过期，需要重新登录
+	const int ERR_TOKEN_EXPIRE    = 100103;
+	//账号异常，需要登录
+	const int ERR_ACCOUNT_ABNORMAL= 100104;
+	//登录操作太频繁
+	const int ERR_LOGIN_QUICK     = 100105;
+	//该业务不允许登录
+	const int ERR_LOGIN_FORBIDDEN = 100106;
+
+
+	//阿里云ons操作失败
+	const int ERR_ONS_PRODUCE     = 100201;
+
+
+	//帐号中心相关
+	//数据行数异常
+	const int ERR_ACCOUNTCENTER_ROW_COUNT = 110000;
+	//创建mysql连接或者执行sql出现异常
+	const int ERR_ACCOUNTCENTER_MYSQL = 110001;
+	//帐号中心接口调用出现未捕获异常
+	const int ERR_ACCOUNTCENTER_UNHANDLED_EXP = 110002;
+	//内部错误
+	const int ERR_ACCOUNTCENTER_INTERNAL = 110003;
+	//Redis内部错误，通常是redis服务器返回了无法处理的异常
+	const int ERR_ACCOUNTCENTER_REDIS_INTERNAL = 110004;
+        //发现数据不一致
+        const int ERR_ACCOUNTCENTER_OUTOFSYNC = 110005;
+        //执行sql出现异常
+        const int ERR_ACCOUNTCENTER_SQLEXECUTE_EXCEPTION = 110006;
+
+
+	//300000-400000 不需要告警
+	//帐号中心相关
+	//Redis写冲突，通常重试就好
+	const int ERR_ACCOUNTCENTER_REDIS_WRITE_CONFLICT = 310001;
+	//数据为空
+	const int ERR_ACCOUNTCENTER_NIL = 310002;
+        //登录名冲突，登录名已存在
+        const int ERR_ACCOUNTCENTER_LOGINNAME_CONFLICT = 310003;
+        //登录名包含异常字符
+        const int ERR_ACCOUNTCENTER_LOGINNAME_INVALID = 310004;
+        //手机号码字段不是一个正常的手机号
+        const int ERR_ACCOUNTCENTER_MOBILEPHONE_INVALID = 310005;
+        //尝试写入一个只读字段
+        const int ERR_ACCOUNTCENTER_FIELD_READONLY = 310006;
+        //写User结构体时填入的数据和Role不匹配
+        const int ERR_ACCOUNTCENTER_USER_FIELD_INVALID = 310007;
+        //操作的id不存在
+        const int ERR_ACCOUNTCENTER_IDNOTEXISTS = 310008;
+        //不允许修改角色
+        const int ERR_ACCOUNTCENTER_USERROLE_READONLY = 310009;
+        //不允许修改班级的学校ID
+        const int ERR_ACCOUNTCENTER_CLASSROOMSCHOOLID_READONLY = 310010;
+        //不允许填入非法schoolId
+        const int ERR_ACCOUNTCENTER_SCHOOLID_INVALID = 310011;
+        //字符串超过长度
+        const int ERR_ACCOUNTCENTER_STR_LENGTH_OUTOFRANGE = 310012;
+        //数组长度超过限制
+        const int ERR_ACCOUNTCENTER_ARRAYSIZE_OUT_OF_LIMIT = 310013;
+        //登录名或者手机号必填其一
+        const int ERR_ACCOUNTCENTER_LOGINNAME_MOBILEPHONE_MUSTHAVEONE = 310014;
+};

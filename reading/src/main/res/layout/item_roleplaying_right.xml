@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/:rl_item_rolePlaying_right"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="39dp"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/app_margin_24"
+    android:paddingRight="@dimen/app_margin_24">
+
+    <ImageView
+        android:id="@+id/image_rolePlay_avatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:src="@mipmap/ic_roleplay_avatar_default"/>
+
+    <TextView
+        android:id="@+id/tv_rolePlay_content"
+        style="@style/app.text.white.XLLL"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/image_rolePlay_avatar"
+        android:layout_marginTop="@dimen/app_margin_12"
+        android:gravity="right"
+        android:text="Nice to meet you"/>
+</RelativeLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <LinearLayout style="@style/app.settingItem.layout">
+
+        <TextView
+            style="@style/app.settingItem.icon"
+            android:background="@drawable/ic_accountname"/>
+
+        <EditText
+            android:id="@+id/tv_supplement_name"
+            style="@style/app.settingItem.iconText"
+            android:hint="学生姓名"/>
+    </LinearLayout>
+
+    <LinearLayout style="@style/app.settingItem.layout">
+
+        <TextView
+            android:id="@+id/tv_supplement_area"
+            style="@style/app.settingItem.iconText"
+            android:hint="请选择地区"/>
+
+        <ImageView
+            style="@style/app.settingItem.right"
+            android:src="@mipmap/ic_arrow_down_gray"/>
+    </LinearLayout>
+
+    <LinearLayout style="@style/app.settingItem.layout">
+
+        <TextView
+            android:id="@+id/tv_supplement_school"
+            style="@style/app.settingItem.iconText"
+            android:hint="请选择学校"/>
+
+        <ImageView
+            style="@style/app.settingItem.right"
+            android:src="@mipmap/ic_arrow_down_gray"/>
+    </LinearLayout>
+
+    <LinearLayout style="@style/app.settingItem.layout">
+
+        <EditText
+            android:id="@+id/tv_supplement_class"
+            style="@style/app.settingItem.iconText"
+            android:hint="请输入班级"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_supplement_next"
+        style="@style/app.settingItem.layout"
+        android:background="@drawable/btn_login"
+        android:enabled="false"
+        android:text="下一步"
+        android:textColor="@color/btn_login_text"
+        android:textSize="@dimen/text_size_16"/>
+</LinearLayout>

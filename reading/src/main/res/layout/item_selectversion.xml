@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+          android:id="@+id/tv_bookVersion"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:clickable="true"
+          android:background="@drawable/bg_shadow_blue_5"
+          android:layout_marginLeft="@dimen/app_default_border"
+          android:layout_marginRight="@dimen/app_default_border"
+          android:padding="@dimen/app_margin_24"
+          android:textSize="@dimen/text_size_16"
+          android:gravity="center"
+          android:orientation="vertical"
+          android:textColor="@color/white">
+
+</TextView>

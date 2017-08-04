@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <FrameLayout
+        style="@style/app.settingItem.layout"
+        android:layout_marginTop="0dp">
+        <TextView
+            android:id="@+id/tv_setting_changePwd"
+            style="@style/app.settingItem.headText"
+            android:text="修改密码"/>
+        <ImageView
+            style="@style/app.settingItem.right"/>
+    </FrameLayout>
+
+    <FrameLayout
+        style="@style/app.settingItem.layout">
+        <TextView
+            android:id="@+id/tv_setting_download"
+            style="@style/app.settingItem.headText"
+            android:text="使用2G/3G/4G网络下载"/>
+
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/switch_setting_download"
+            android:theme="@style/app.settingItem.checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:checked="true"/>
+    </FrameLayout>
+
+    <FrameLayout
+        style="@style/app.settingItem.layout">
+        <TextView
+            android:id="@+id/tv_setting_grade"
+            style="@style/app.settingItem.headText"
+            android:text="好评一下"/>
+        <ImageView
+            style="@style/app.settingItem.right"/>
+    </FrameLayout>
+
+    <FrameLayout
+        style="@style/app.settingItem.layout">
+        <TextView
+            android:id="@+id/tv_setting_update"
+            style="@style/app.settingItem.headText"
+            android:text="检测更新"/>
+        <ImageView
+            style="@style/app.settingItem.right"/>
+
+        <TextView style="@style/app.settingItem.subContent"
+            android:text="V1.4.3"/>
+    </FrameLayout>
+
+    <FrameLayout
+        style="@style/app.settingItem.layout">
+        <TextView
+            android:id="@+id/tv_setting_aboutMe"
+            style="@style/app.settingItem.headText"
+            android:text="关于我们"/>
+        <ImageView
+            style="@style/app.settingItem.right"/>
+    </FrameLayout>
+
+    <FrameLayout
+        style="@style/app.settingItem.layout">
+        <TextView
+            android:id="@+id/tv_setting_clearCache"
+            style="@style/app.settingItem.headText"
+            android:text="清楚缓存"/>
+        <ImageView
+            style="@style/app.settingItem.right"/>
+
+        <TextView style="@style/app.settingItem.subContent"
+                  android:text="2.6MB"/>
+
+    </FrameLayout>
+</LinearLayout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:cardBackgroundColor="@android:color/transparent"
+                                    app:cardElevation="0dp"
+                                    app:cardPreventCornerOverlap="false"
+                                    app:cardUseCompatPadding="true"
+                                    app:layout_flexBasisPercent="49%">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_shadow_white_5"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            style="@style/app.text.white.M"
+            android:id="@+id/tv_breakthrough_sub_mission"
+            android:text="Let's talk"
+            android:textColor="@color/green"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_breakthrough_star"/>
+
+            <TextView
+                style="@style/app.text.white.S"
+                android:id="@+id/tv_breakthrough_sub_star"
+                android:layout_marginLeft="2dp"
+                android:text="x50"
+                android:textColor="@color/breakthrough_result_get_star_text"/>
+
+            <ProgressBar
+                android:id="@+id/progress_breakthrough_score"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="8dp"
+                android:layout_marginLeft="12dp"
+                android:layout_weight="1"
+                android:max="100"
+                android:progress="90"
+                android:progressDrawable="@drawable/bg_progressbar"/>
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>

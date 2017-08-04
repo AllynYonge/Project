@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/chk_rolePlay_selected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:button="@drawable/ic_chk_listen"
+        android:checked="false"
+        />
+
+    <TextView
+        android:id="@+id/tv_rolePlay_name"
+        style="@style/app.text.gray.XL"
+        android:layout_marginLeft="@dimen/app_margin_8"
+        android:text="Module 1"
+        android:textColor="@color/gray_30"
+        />
+
+
+</com.zhy.android.percent.support.PercentLinearLayout>

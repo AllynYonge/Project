@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <LinearLayout style="@style/app.settingItem.layout">
+
+        <TextView
+            style="@style/app.settingItem.icon"
+            android:background="@drawable/ic_pwd"/>
+
+        <EditText
+            style="@style/app.settingItem.iconText"
+            android:hint="输入原始密码"/>
+    </LinearLayout>
+
+    <LinearLayout style="@style/app.settingItem.layout">
+
+        <TextView
+            style="@style/app.settingItem.icon"
+            android:background="@drawable/ic_pwd"/>
+
+        <EditText
+            style="@style/app.settingItem.iconText"
+            android:hint="设置6-8位数字、字母新密码"/>
+
+        <android.support.v7.widget.AppCompatCheckBox
+            style="@style/app.settingItem.right"
+            android:button="@drawable/ic_seepwd"
+            android:checked="true"
+            android:focusable="false"/>
+    </LinearLayout>
+
+    <TextView
+        style="@style/app.settingItem.layout"
+        android:background="@drawable/btn_login"
+        android:enabled="false"
+        android:text="确认"
+        android:textColor="@color/btn_login_text"
+        android:textSize="@dimen/text_size_16"/>
+</LinearLayout>

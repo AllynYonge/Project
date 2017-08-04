@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@mipmap/bg_learn_banner"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        style="@style/app.text.white.XL"
+        android:id="@+id/tv_learn_totalStar"
+        android:layout_width="0dp"
+        android:layout_marginBottom="@dimen/app_margin_16"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:background="@drawable/bg_darkcyan_180"
+        android:drawableLeft="@mipmap/ic_star"
+        android:paddingBottom="@dimen/app_margin_8"
+        android:paddingLeft="@dimen/app_margin_16"
+        android:paddingRight="@dimen/app_margin_32"
+        android:paddingTop="@dimen/app_margin_8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/imageView2"
+        app:layout_constraintRight_toLeftOf="@+id/image_learn_go"
+        android:layout_marginRight="@dimen/app_margin_24"/>
+
+    <ImageView
+        android:id="@+id/image_learn_go"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        android:clickable="true"
+        android:src="@drawable/btn_learn_go"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+</android.support.constraint.ConstraintLayout>

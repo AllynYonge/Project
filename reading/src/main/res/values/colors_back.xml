@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#00afcf</color>
+    <color name="colorPrimaryDark">#008ea8</color>
+    <color name="colorAccent">#00afcf</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#333333</color>
+    <color name="red">#FF0000</color>
+    <color name="gray">#666666</color>
+    <color name="gray_40">#888888</color>
+    <color name="gray_30">#bdbdbd</color>
+    <color name="yellow">#ffcc00</color>
+    <color name="yellow_60">#ffb400</color>
+    <color name="green">#00C083</color>
+    <color name="cyan_10">#AFF3FF</color>
+    <color name="cyan_30">#02c5e4</color>
+    <color name="cyan_40">#00bee1</color>
+    <color name="cyan">@color/colorPrimary</color>
+    <color name="cyan_60">#019cb7</color>
+    <color name="cyan_65">#0199b8</color>
+    <color name="cyan_70">#017c95</color>
+    <color name="cyan_80">#00838F</color>
+    <color name="cyan_90">#006064</color>
+    <color name="brown">#865B23</color>
+
+    <color name="stfImageColor">#FF4081</color>
+
+    <!--app-->
+    <color name="listen_check_module_bg">#F2F2F2</color>
+    <color name="line_bg">#dddddd</color>
+    <color name="reading_detail_outline_selected_bg">#EEEEEE</color>
+    <color name="reading_detail_outline_unit_text">@color/black</color>
+    <color name="reading_detail_translate_prompt_bg">@color/yellow</color>
+    <color name="reading_detail_guide_prompt_bg">#F23442</color>
+    <color name="ratingBar_light">#fdc100</color>
+    <color name="ratingBar">#017d93</color>
+    <color name="breakthrough_result_get_star_text">#FF9000</color>
+    <color name="text_gary">@color/gray</color>
+    <color name="tag_red">#FC4949</color>
+    <color name="tag_gray">#7e7e7e</color>
+
+    <!--文字的颜色-->
+    <color name="text_title_black">#282828</color>
+    <color name="dialog_button_color">#07B7D6</color>
+    <color name="text_title_green">#4cc9b6</color>
+
+    <!--点读页面-->
+    <color name="read_translate_bg">#FFF8CE</color>
+
+</resources>

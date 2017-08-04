@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <LinearLayout style="@style/app.settingItem.layout">
+
+        <TextView
+            style="@style/app.settingItem.icon"
+            android:id="@+id/tv_setNewPwd_pwdIcon"
+            android:background="@drawable/ic_pwd"/>
+
+        <EditText
+            android:id="@+id/edit_setNewPwd_pwd"
+            style="@style/app.settingItem.iconText"
+            android:hint="设置6-8位数字、字母新密码"
+            android:inputType="textVisiblePassword"
+            android:maxLength="20"/>
+
+        <LinearLayout
+            android:id="@+id/ll_setNewPwd_see"
+            style="@style/app.settingItem.right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="0dp"
+            android:padding="@dimen/app_margin_12">
+
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/chk_setNewPwd_see"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/ic_seepwd"
+                android:checked="true"
+                android:clickable="false"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_setNewPwd_next"
+        style="@style/app.settingItem.layout"
+        android:background="@drawable/btn_login"
+        android:enabled="false"
+        android:text="确认"
+        android:textColor="@color/btn_login_text"
+        android:textSize="@dimen/text_size_16"/>
+</LinearLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="false" android:state_checked="false" android:drawable="@mipmap/ic_alwayslisten_play_default"></item>
+    <item android:state_pressed="true" android:state_checked="false" android:drawable="@mipmap/ic_alwayslisten_play_press"></item>
+    <item android:state_pressed="false" android:state_checked="true" android:drawable="@mipmap/ic_alwayslisten_stop_default"></item>
+    <item android:state_pressed="true" android:state_checked="true" android:drawable="@mipmap/ic_alwayslisten_stop_press"></item>
+    <item android:drawable="@mipmap/ic_alwayslisten_play_default"></item>
+</selector>

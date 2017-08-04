@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">金太阳点读宝</string>
+    <string name="app_crash">金太阳点读宝停止工作</string>
+    <string name="str_relogin">系统检测到您当前的账号在其它设备上登录，您当前的设备已下线。如果这不是您本人操作，请尽快修改密码</string>
+
+    <!--adapter-->
+    <string name="loading">正在加载中...</string>
+    <string name="load_failed">加载失败，请点我重试</string>
+    <string name="load_end">没有更多数据</string>
+
+    <!-- stateLayout -->
+    <string name="stfErrorMessage">An error occurred please try again later</string>
+    <string name="stfOfflineMessage">Please check your connection</string>
+    <string name="stfLocationOffMessage">Please enable location services</string>
+    <string name="stfEmptyMessage">暂时没有内容</string>
+    <string name="stfLoadingMessage">加载中</string>
+    <string name="stfButtonText">重新加载</string>
+
+    <array name="bottom_menu">
+        <item>点读</item>
+        <item>同步学</item>
+        <item>拓展课</item>
+    </array>
+
+    <array name="grades_menu">
+        <item>上海牛津小学英语</item>
+        <item>广州版小学英语</item>
+        <item>上海牛津小学英语</item>
+        <item>江苏牛津小学英语</item>
+        <item>PEP小学英语</item>
+    </array>
+
+    <array name="photo_camera">
+        <item>拍照</item>
+        <item>从相册中选择</item>
+    </array>
+    <array name="listen_timer">
+        <item>10分钟</item>
+        <item>20分钟</item>
+        <item>30分钟</item>
+        <item>40分钟</item>
+        <item>50分钟</item>
+        <item>60分钟</item>
+        <item>无定时设置</item>
+    </array>
+
+    <string name="error_gif">x or y bound size should be at least %1$dpx and file size should be no more than %2$sM</string>
+
+</resources>

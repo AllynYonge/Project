@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+</head>
+
+<body>
+<p><input type="text" id="text1" value="用户名(username)"/></p>
+<p><input type="text" id="text2" value="password" /></p>
+
+<p><input type="button" id="enter" value="发消息给Native" onclick="testClick();"/></p>
+<p><input type="button" id="enter1" value="调用Native方法" onclick="testClick1();"/></p>
+
+<h2>跳转测试</h2>
+<h2>自定义Schame[通常来说都是这样的]</h2>
+<p><a href="ddb://m.kingsunsoft.com/user/register">ddb://m.kingsunsoft.com/user/register</a></p>
+
+</body>
+<script>
+function testClick() {
+    var str1 = document.getElementById("text1").value;
+    var str2 = document.getElementById("text2").value;
+    //send message to native
+    var data = {id: 1, content: "这是一个图片 <img src=\"a.png\"/> test\r\nhahaha"};
+    window.WebViewJavascriptBridge.send(
+        data
+        , function(responseData) {
+            document.getElementById("show").innerHTML = "repsonseData from java, data = " + responseData
+        }
+    );
+}
+function testClick1() {
+    var str1 = document.getElementById("text1").value;
+    var str2 = document.getElementById("text2").value;
+    //call native method
+    window.WebViewJavascriptBridge.callHandler(
+        'getUserToken'
+        , {'param': '中文测试'}
+        , function(responseData) {
+            document.getElementById("show").innerHTML = "send get responseData from java, data = " + responseData
+        }
+    );
+}
+</script>
+</html>

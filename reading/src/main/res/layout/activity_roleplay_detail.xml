@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              xmlns:wheel="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <include layout="@layout/layout_recycler"/>
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/bg_roleplay_bottom"
+            android:scaleType="fitXY"
+            android:layout_gravity="bottom"/>
+
+        <ImageView
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@mipmap/ic_roleplay_follow_read_disable"/>
+
+        <com.king.reading.widget.DonutProgress
+            android:id="@+id/progress_wheel"
+            android:layout_width="88dp"
+            android:layout_height="88dp"
+            android:layout_gravity="center"
+            wheel:donut_max="100"
+            wheel:donut_unfinished_color="@color/cyan_80"
+            wheel:donut_finished_color="#009D99"
+            wheel:donut_finished_stroke_width="4dp"
+            wheel:donut_unfinished_stroke_width="4dp"/>
+
+        <ImageView
+            android:id="@+id/image_roleplay_vioce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@mipmap/ic_roleplay_follow_reading"
+            android:layout_marginTop="2dp"/>
+    </FrameLayout>
+</LinearLayout>

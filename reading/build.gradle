@@ -1,0 +1,142 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.jakewharton.hugo'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 25
+        applicationId "com.king.reading"
+        versionCode 25
+        versionName "2.0"
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        manifestPlaceholders = [
+                CHANNEL_VALUE  : "default_channel",
+                BUILD_NUM_VALUE: 25,
+        ]
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+    }
+
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/java']
+            res.srcDirs = ['src/main/res', 'src/main/res_lib']
+            jniLibs.srcDirs = ['libs']
+        }
+
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("signature.keystore")
+            storePassword "KS0217kingreading"
+            keyAlias "KingReading"
+            keyPassword "KS0217kingreading"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            zipAlignEnabled true
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            ndk {
+                abiFilters "armeabi", "armeabi-v7a"
+            }
+        }
+        debug {
+            signingConfig signingConfigs.release
+            ndk {
+                abiFilters "armeabi", "armeabi-v7a", "x86"
+            }
+            defaultPublishConfig "debug"
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+        disable 'RestrictedApi'
+    }
+}
+
+dependencies {
+    def widget = rootProject.ext.widget
+    def rx = rootProject.ext.rx
+    def db = rootProject.ext.db
+    def ali = rootProject.ext.ali
+    def commonDependencies = rootProject.ext.commonDependencies
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile widget.supportAppcompatV7
+    compile widget.constraintLayout
+    compile widget.cardView
+    compile widget.circleImageView
+    compile widget.recyclerView
+    compile widget.percentLayout
+    compile widget.spinner
+    compile widget.flexbox
+    compile widget.design
+    compile widget.dialog
+    compile widget.supportV4
+    compile widget.matisse
+    compile widget.banner
+    compile 'com.cocosw:bottomsheet:1.+@aar'
+    //rxjava
+    compile rx.rxjava
+    compile rx.rxAndroid
+    compile rx.rxlifecycle
+    compile rx.rxlifecycleAndroid
+    compile rx.rxlifecycleComponent
+    //rxbinding
+    compile rx.rxbinding
+    compile rx.rxbindingSupport
+    //butterknife
+    compile commonDependencies.butterknife
+    annotationProcessor commonDependencies.butterknifeComplier
+    //glide
+    compile commonDependencies.glide
+    //dagger2
+    compile commonDependencies.dagger2
+    annotationProcessor commonDependencies.dagger2Complier
+    //permissions
+    compile commonDependencies.permissions
+    annotationProcessor commonDependencies.permissions_processor
+    //rxpermissions
+    compile commonDependencies.rxpermissions
+    compile commonDependencies.eventbus
+    compile commonDependencies.guava
+    compile net.okttp
+    compile net.retrofit
+    compile net.retrofitConverter
+    compile net.retrofitAdapter
+    compile net.tars
+    compile db.dbflow
+    compile db.dbflow_core
+    compile db.dbflow_rx
+    annotationProcessor db.dbflow_processor
+    //logger
+    compile commonDependencies.logger
+    compile 'com.mikepenz:materialize:1.0.2@aar'
+    compile 'com.mikepenz:fastadapter:2.5.2@aar'
+    compile 'com.alibaba:fastjson:1.2.35'
+    compile 'com.ms-square:expandableTextView:0.1.4'
+    compile ali.push_core
+    compile ali.push_utdid
+    compile ali.push_ut
+    compile ali.push_third
+    compile ali.oss
+    compile ali.router
+    annotationProcessor ali.router_processor
+
+    compile 'com.blankj:utilcode:1.8.1'
+}
+
